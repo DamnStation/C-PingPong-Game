@@ -9,17 +9,19 @@ namespace GamePingPongRe
         public class Ball
         {
             public string ballSkin { get; set; }
-            public int ballPosition { get; set; }
-
+            public bool ballDirectionUp { get; set; }
+            public bool ballDirectionRight { get; set; }
             public int ballPositionX { get; set; }
             public int ballPositionY { get; set; }
 
-            public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY)
+            public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY,bool aBallDirectionUp,bool aBallDirectionRight)
             {
                 ballSkin = aBallSkin;
                // ballPosition = aBallPosition;
                 ballPositionX = aBallPositionX;
                 ballPositionY = aBallPositionY;
+                ballDirectionUp = aBallDirectionUp;
+                ballDirectionRight = aBallDirectionRight;
             }
 
             public void DrawBall()
@@ -27,15 +29,32 @@ namespace GamePingPongRe
                 PrintAtPosition(ballPositionX , ballPositionY, ballSkin);
             }
 
-            public void MoveBallUpRight()
+            public void MoveBall()
             {
-                ballPositionY--;
-                ballPositionX++;
-            }
-            public void MoveBallDownLeft()
-            {
-                ballPositionY++;
-                ballPositionX--;
+                if (ballPositionY == 0)
+                {
+                    ballDirectionUp = false;
+                }
+                if (ballDirectionUp)
+                {
+                    ballPositionY--;
+                }
+                else
+                {
+                    ballPositionY++;
+                }
+                if (ballDirectionRight)
+                {
+                    ballPositionX++;
+                }
+                else
+                {
+                    ballDirectionRight = false;
+                }
+                if (ballPositionY == Console.WindowHeight -1)
+                {
+                    ballDirectionUp = true;
+                }
             }
         }
     }
