@@ -1,0 +1,11 @@
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.deps.json
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.runtimeconfig.json
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.runtimeconfig.dev.json
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.dll
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.pdb
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.csprojAssemblyReference.cache
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.csproj.CoreCompileInputs.cache
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.AssemblyInfoInputs.cache
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.AssemblyInfo.cs
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.dll
+C:\Users\WinG\source\repos\GamePingPongRe\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.pdb
