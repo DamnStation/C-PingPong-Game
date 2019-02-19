@@ -28,6 +28,9 @@ namespace GamePingPongRe
 
             Score score = new Score(0,"-",0);
 
+            Console.CursorVisible = false;
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+
             while (true)
             {
 
