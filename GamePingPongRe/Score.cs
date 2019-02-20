@@ -2,28 +2,25 @@
 {
     partial class PingPong
     {
-        public class Score
+        public static class Score
         {
-            public int playerOneScore = 10;
-            public string separator = "-";
-            public int playerTwoScore = 10;
+            public static int playerOneScore;
+            public static string separator;
+            public static int playerTwoScore;
             
-            
+            //public Score(int aPlayerOneScore,string aSeparator, int aPlayerTwoScore)
+            //{
+            //    playerOneScore = aPlayerOneScore;
+            //    separator = aSeparator;
+            //    playerTwoScore = aPlayerTwoScore;
+            //}
 
-            public Score(int aPlayerOneScore,string aSeparator, int aPlayerTwoScore)
-            {
-                playerOneScore = aPlayerOneScore;
-                separator = aSeparator;
-                playerTwoScore = aPlayerTwoScore;
-
-            }
-
-            public void PlayerOneScores()
+            public static void PlayerOneScores()
             {
                 playerOneScore++;
             }
 
-            public void PlayerTwoScore()
+            public static void PlayerTwoScore()
             {
                 playerTwoScore++;
             }

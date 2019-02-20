@@ -26,10 +26,13 @@ namespace GamePingPongRe
 
             Ball ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,true,true);
 
-            Score score = new Score(0,"-",0);
+            //  Score score = new Score(0,"-",0);
+            Score.playerOneScore = 0;
+            Score.playerTwoScore = 0;
+            Score.separator = "-";
 
             Console.CursorVisible = false;
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.BackgroundColor = ConsoleColor.Black;
 
             while (true)
             {
@@ -49,10 +52,7 @@ namespace GamePingPongRe
                     }
                 }
 
-                if (ball.ballPositionX == Console.WindowWidth - 1)
-                {
-                    score.playerOneScore++;
-                }
+               
                 
 
                 ball.MoveBall();
@@ -60,7 +60,7 @@ namespace GamePingPongRe
                 playerOne.DrawPlayer();
                 playerTwo.DrawPlayer();
                 ball.DrawBall();
-                Console.SetCursorPosition(Console.WindowWidth / 2, 1); Console.Write("{0}{1}{2}",score.playerOneScore, score.separator, score.playerTwoScore);
+                Console.SetCursorPosition(Console.WindowWidth / 2, 1); Console.Write("{0}{1}{2}",Score.playerOneScore, Score.separator, Score.playerTwoScore);
                 System.Threading.Thread.Sleep(60);
                 Console.Clear();
                 

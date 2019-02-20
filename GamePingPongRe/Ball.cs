@@ -55,6 +55,20 @@ namespace GamePingPongRe
                 {
                     ballDirectionUp = true;
                 }
+                // Score
+                if (ballPositionX == Console.WindowWidth -1)
+                {
+                    Score.playerOneScore++;
+                }
+                if (ballPositionX == 0)
+                {
+                    Score.playerTwoScore++;
+                }
+                //if (ballPositionX == Player() + )
+                //{
+
+                //}
+
             }
         }
     }
