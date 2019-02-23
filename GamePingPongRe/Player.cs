@@ -7,7 +7,7 @@ namespace GamePingPongRe
 {
     partial class PingPong
     {
-        class Player
+       public class Player
         {
             public  int playerSize { get; set; }
             public  string playerSkin { get; set; }
