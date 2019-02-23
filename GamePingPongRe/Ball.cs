@@ -13,6 +13,7 @@ namespace GamePingPongRe
             public bool ballDirectionRight { get; set; }
             public int ballPositionX { get; set; }
             public int ballPositionY { get; set; }
+            public bool ballPlayer = false;
 
             public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY,bool aBallDirectionUp,bool aBallDirectionRight)
             {
@@ -59,16 +60,21 @@ namespace GamePingPongRe
                 if (ballPositionX == Console.WindowWidth -1)
                 {
                     Score.playerOneScore++;
+                    DrawBall();
                 }
                 if (ballPositionX == 0)
                 {
                     Score.playerTwoScore++;
                 }
-                //if (ballPositionX == Player() + )
+                //if (ballPositionX == playerPosition + playerSize) 
                 //{
-
+                //    ballDirectionRight = !ballDirectionRight;
                 //}
 
+                if (ballPositionX == // HOW TO REACH OTHER CLASSES FFS>>>)
+                {
+                    ballPlayer = true;
+                }
             }
         }
     }
