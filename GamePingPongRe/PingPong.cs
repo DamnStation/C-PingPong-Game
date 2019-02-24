@@ -24,7 +24,7 @@ namespace GamePingPongRe
 
             Player playerTwo = new Player(4, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
 
-            Ball ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,true,true);
+            Ball ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false);
 
             //  Score score = new Score(0,"-",0);
             Score.playerOneScore = 0;

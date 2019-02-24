@@ -47,10 +47,12 @@ namespace GamePingPongRe
                 if (ballDirectionRight)
                 {
                     ballPositionX++;
+                    //ballDirectionRight = true;
                 }
                 else
                 {
-                    ballDirectionRight = false;
+                    ballPositionX--;
+                    //ballDirectionRight = false; 
                 }
                 if (ballPositionY == Console.WindowHeight -1)
                 {
@@ -71,10 +73,24 @@ namespace GamePingPongRe
                 //    ballDirectionRight = !ballDirectionRight;
                 //}
 
-                if (ballPositionX == // HOW TO REACH OTHER CLASSES FFS>>>)
+                if (ballPositionX == Console.WindowWidth /* Reset and give oposite direction for P1*/)
                 {
                     ballPlayer = true;
+                    ballPositionX = Console.WindowWidth / 2;
+                    ballPositionY = Console.WindowHeight / 2;
+                    ballDirectionRight = false;
+                    
                 }
+                if (ballPositionX == Console.WindowLeft  /* Reset and give oposite direction for P2 */)
+                {
+                    ballPlayer = true;
+                    ballPositionX = Console.WindowWidth / 2;
+                    ballPositionY = Console.WindowHeight / 2;
+                    ballDirectionRight = true;
+                   
+                }
+
+
             }
         }
     }
