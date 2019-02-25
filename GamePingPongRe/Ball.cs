@@ -8,11 +8,13 @@ namespace GamePingPongRe
     {
         public class Ball
         {
+           //TODO Try private var and get set prop for communication with other classes => private int BallPositionX;  
             public string ballSkin { get; set; }
             public bool ballDirectionUp { get; set; }
             public bool ballDirectionRight { get; set; }
             public int ballPositionX { get; set; }
             public int ballPositionY { get; set; }
+
             public bool ballPlayer = false;
 
             public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY,bool aBallDirectionUp,bool aBallDirectionRight)
@@ -68,10 +70,6 @@ namespace GamePingPongRe
                 {
                     Score.playerTwoScore++;
                 }
-                //if (ballPositionX == playerPosition + playerSize) 
-                //{
-                //    ballDirectionRight = !ballDirectionRight;
-                //}
 
                 if (ballPositionX == Console.WindowWidth /* Reset and give oposite direction for P1*/)
                 {
@@ -90,7 +88,10 @@ namespace GamePingPongRe
                    
                 }
 
-
+                //if (ballPositionX ==  Player.playerPosition)
+                //{
+                //    ballDirectionRight = !ballDirectionRight;
+                //}
             }
         }
     }

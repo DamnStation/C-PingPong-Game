@@ -23,7 +23,7 @@ namespace GamePingPongRe
             Player playerOne = new Player(5, Console.WindowHeight / 2 /2, 1, 1, "|]");
 
             Player playerTwo = new Player(4, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
-
+            
             Ball ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false);
 
             //  Score score = new Score(0,"-",0);
@@ -33,7 +33,7 @@ namespace GamePingPongRe
 
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
-
+            
             while (true)
             {
 

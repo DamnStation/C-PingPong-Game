@@ -688,23 +688,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WinG\\.nuget\\packages\\": {},
+    "C:\\Users\\Rado\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WinG\\source\\repos\\DamnStation\\C-PingPong-Game\\GamePingPongRe\\GamePingPongRe.csproj",
+      "projectUniqueName": "C:\\Users\\Rado\\Desktop\\Projects\\C-PingPong-Game\\GamePingPongRe\\GamePingPongRe.csproj",
       "projectName": "GamePingPongRe",
-      "projectPath": "C:\\Users\\WinG\\source\\repos\\DamnStation\\C-PingPong-Game\\GamePingPongRe\\GamePingPongRe.csproj",
-      "packagesPath": "C:\\Users\\WinG\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WinG\\source\\repos\\DamnStation\\C-PingPong-Game\\GamePingPongRe\\obj\\",
+      "projectPath": "C:\\Users\\Rado\\Desktop\\Projects\\C-PingPong-Game\\GamePingPongRe\\GamePingPongRe.csproj",
+      "packagesPath": "C:\\Users\\Rado\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rado\\Desktop\\Projects\\C-PingPong-Game\\GamePingPongRe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\WinG\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rado\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -741,13 +741,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\WinG\\source\\repos\\DamnStation\\C-PingPong-Game\\GamePingPongRe\\obj\\GamePingPongRe.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
