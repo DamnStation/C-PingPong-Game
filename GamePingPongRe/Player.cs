@@ -7,14 +7,19 @@ namespace GamePingPongRe
 {
     partial class PingPong
     {
-       public class Player
+        public class Player
         {
-            public  int playerSize { get; set; }
-            public  string playerSkin { get; set; }
-            public  int playerPosition { get; set; }
-            public  int playerPositionX { get; set; }
-            public  int playerPositionY { get; set; }
-            
+            public int playerSize;
+            public string playerSkin;
+            public int playerPosition;
+            public int playerPositionX;
+            public int playerPositionY;
+            //public static int MyProperty
+            //{
+            //    get { return playerPositionX; }
+            //    set { playerPositionX = value; }
+            //}
+
             public Player(int aPlayerSize, int aPlayerPosition, int aPlayerPositionX, int aPlayerPositionY, string aPlayerSkin)
             {
                 playerSize = aPlayerSize;
@@ -22,7 +27,6 @@ namespace GamePingPongRe
                 playerPositionY = aPlayerPositionY;
                 playerPosition = aPlayerPosition;
                 playerSkin = aPlayerSkin;
-                
             }
 
             public void DrawPlayer()
@@ -39,7 +43,6 @@ namespace GamePingPongRe
                 {
                     playerPosition--;
                 }
-               
             }
 
             public void MovePlayerDown()
@@ -48,7 +51,6 @@ namespace GamePingPongRe
                 {
                     playerPosition++;
                 }
-                
             }
         }
     }

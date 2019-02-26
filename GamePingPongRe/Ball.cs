@@ -14,8 +14,7 @@ namespace GamePingPongRe
             public bool ballDirectionRight { get; set; }
             public int ballPositionX { get; set; }
             public int ballPositionY { get; set; }
-
-            public bool ballPlayer = false;
+            public bool ballPlayer { get; set; }
 
             public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY,bool aBallDirectionUp,bool aBallDirectionRight)
             {
@@ -88,10 +87,11 @@ namespace GamePingPongRe
                    
                 }
 
-                //if (ballPositionX ==  Player.playerPosition)
+                //if (ballPositionX == )
                 //{
                 //    ballDirectionRight = !ballDirectionRight;
                 //}
+                
             }
         }
     }

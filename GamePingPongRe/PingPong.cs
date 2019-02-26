@@ -20,7 +20,7 @@ namespace GamePingPongRe
 
         static void Main(string[] args)
         {
-            Player playerOne = new Player(5, Console.WindowHeight / 2 /2, 1, 1, "|]");
+            var playerOne = new Player(5, Console.WindowHeight / 2 /2, 1, 1, "|]");
 
             Player playerTwo = new Player(4, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
             
