@@ -14,11 +14,6 @@ namespace GamePingPongRe
             public int playerPosition;
             public int playerPositionX;
             public int playerPositionY;
-            //public static int MyProperty
-            //{
-            //    get { return playerPositionX; }
-            //    set { playerPositionX = value; }
-            //}
 
             public Player(int aPlayerSize, int aPlayerPosition, int aPlayerPositionX, int aPlayerPositionY, string aPlayerSkin)
             {

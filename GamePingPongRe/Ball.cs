@@ -15,8 +15,11 @@ namespace GamePingPongRe
             public int ballPositionX { get; set; }
             public int ballPositionY { get; set; }
             public bool ballPlayer { get; set; }
+            public Score score { get; set; }
+            public Player playerOne { get; set; }
+            public Player playerTwo { get; set; }
 
-            public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY,bool aBallDirectionUp,bool aBallDirectionRight)
+            public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY,bool aBallDirectionUp,bool aBallDirectionRight,Score aScore,Player aPlayerOne,Player aPlayerTwo)
             {
                 ballSkin = aBallSkin;
                // ballPosition = aBallPosition;
@@ -24,6 +27,9 @@ namespace GamePingPongRe
                 ballPositionY = aBallPositionY;
                 ballDirectionUp = aBallDirectionUp;
                 ballDirectionRight = aBallDirectionRight;
+                score = aScore;
+                playerOne = aPlayerOne;
+                playerTwo = aPlayerTwo;
             }
 
             public void DrawBall()
@@ -62,12 +68,12 @@ namespace GamePingPongRe
                 // Score
                 if (ballPositionX == Console.WindowWidth -1)
                 {
-                    Score.playerOneScore++;
+                    score.PlayerOneScores();
                     DrawBall();
                 }
                 if (ballPositionX == 0)
                 {
-                    Score.playerTwoScore++;
+                    score.PlayerTwoScore();
                 }
 
                 if (ballPositionX == Console.WindowWidth /* Reset and give oposite direction for P1*/)
@@ -87,11 +93,12 @@ namespace GamePingPongRe
                    
                 }
 
-                //if (ballPositionX == )
-                //{
-                //    ballDirectionRight = !ballDirectionRight;
-                //}
+                if (ballPositionX  == playerOne.playerPosition + playerOne.playerSize -3)
+                {
+                    ballDirectionRight = !ballDirectionRight;
+                }
                 
+
             }
         }
     }

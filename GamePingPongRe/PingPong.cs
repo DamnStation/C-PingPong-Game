@@ -17,19 +17,17 @@ namespace GamePingPongRe
             Console.SetCursorPosition(x, y);
             Console.Write(Skin);
         }
+        
 
         static void Main(string[] args)
         {
             var playerOne = new Player(5, Console.WindowHeight / 2 /2, 1, 1, "|]");
 
-            Player playerTwo = new Player(4, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
-            
-            Ball ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false);
+            var playerTwo = new Player(4, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
 
-            //  Score score = new Score(0,"-",0);
-            Score.playerOneScore = 0;
-            Score.playerTwoScore = 0;
-            Score.separator = "-";
+            var score = new Score(0, "-", 0);
+
+            var ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false,score,playerOne,playerTwo);
 
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
@@ -56,7 +54,8 @@ namespace GamePingPongRe
                 playerOne.DrawPlayer();
                 playerTwo.DrawPlayer();
                 ball.DrawBall();
-                Console.SetCursorPosition(Console.WindowWidth / 2, 1); Console.Write("{0}{1}{2}",Score.playerOneScore, Score.separator, Score.playerTwoScore);
+                
+                Console.SetCursorPosition(Console.WindowWidth / 2, 1); Console.Write("{0}{1}{2}",score.playerOneScore, score.separator, score.playerTwoScore);
                 System.Threading.Thread.Sleep(60);
                 Console.Clear();
                 
