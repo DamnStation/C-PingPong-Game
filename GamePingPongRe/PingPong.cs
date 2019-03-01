@@ -6,17 +6,6 @@ namespace GamePingPongRe
     partial class PingPong
     {
 
-        static void GetRidOfBuffer()
-        {
-            Console.BufferHeight = Console.WindowHeight;
-            Console.BufferWidth = Console.WindowWidth;
-        }
-
-        static void PrintAtPosition(int x, int y, string Skin)
-        {
-            Console.SetCursorPosition(x, y);
-            Console.Write(Skin);
-        }
         
 
         static void Main(string[] args)
@@ -28,6 +17,7 @@ namespace GamePingPongRe
             var score = new Score(0, "-", 0);
 
             var ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false,score,playerOne,playerTwo);
+            var methods = new Methods();
 
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
@@ -35,7 +25,7 @@ namespace GamePingPongRe
             while (true)
             {
 
-                GetRidOfBuffer();
+                Methods.GetRidOfBuffer();
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo keyInfo = Console.ReadKey();
@@ -55,7 +45,7 @@ namespace GamePingPongRe
                 playerTwo.DrawPlayer();
                 ball.DrawBall();
                 
-                Console.SetCursorPosition(Console.WindowWidth / 2, 1); Console.Write("{0}{1}{2}",score.playerOneScore, score.separator, score.playerTwoScore);
+                Console.SetCursorPosition(Console.WindowWidth / 2, 1); Console.Write("{0}{1}{2}",score.PlayerOneScore, score.Separator, score.PlayerTwoScore);
                 System.Threading.Thread.Sleep(60);
                 Console.Clear();
                 

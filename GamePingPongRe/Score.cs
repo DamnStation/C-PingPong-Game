@@ -6,25 +6,29 @@ namespace GamePingPongRe
     {
         public class Score
         {
-            public int playerOneScore;
-            public string separator;
-            public int playerTwoScore;
-           
+            private int playerOneScore;
+            private string separator;
+            private int playerTwoScore;
+
+            public int PlayerOneScore { get => playerOneScore; set => playerOneScore = value; }
+            public string Separator { get => separator; set => separator = value; }
+            public int PlayerTwoScore { get => playerTwoScore; set => playerTwoScore = value; }
+
             public Score(int aPlayerOneScore, string aSeparator, int aPlayerTwoScore)
             {
-                playerOneScore = aPlayerOneScore;
-                separator = aSeparator;
-                playerTwoScore = aPlayerTwoScore;
+                this.PlayerOneScore = aPlayerOneScore;
+                this.Separator = aSeparator;
+                this.PlayerTwoScore = aPlayerTwoScore;
             }
 
             public void PlayerOneScores()
             {
-                playerOneScore++;
+                PlayerOneScore++;
             }
 
-            public void PlayerTwoScore()
+            public void PlayerTwoScores()
             {
-                playerTwoScore++;
+                PlayerTwoScore++;
             }
         }
     }

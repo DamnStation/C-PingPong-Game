@@ -7,44 +7,50 @@ namespace GamePingPongRe
 {
     partial class PingPong
     {
-        public class Player
+        public class Player : IPlayer
         {
-            public int playerSize;
-            public string playerSkin;
-            public int playerPosition;
-            public int playerPositionX;
-            public int playerPositionY;
+            private int playerSize;
+            private string playerSkin;
+            private int playerPosition;
+            private int playerPositionX;
+            private int playerPositionY;
+
+            public int PlayerSize { get => playerSize; set => playerSize = value; }
+            public string PlayerSkin { get => playerSkin; set => playerSkin = value; }
+            public int PlayerPosition { get => playerPosition; set => playerPosition = value; }
+            public int PlayerPositionX { get => playerPositionX; set => playerPositionX = value; }
+            public int PlayerPositionY { get => playerPositionY; set => playerPositionY = value; }
 
             public Player(int aPlayerSize, int aPlayerPosition, int aPlayerPositionX, int aPlayerPositionY, string aPlayerSkin)
             {
-                playerSize = aPlayerSize;
-                playerPositionX = aPlayerPositionX;
-                playerPositionY = aPlayerPositionY;
-                playerPosition = aPlayerPosition;
-                playerSkin = aPlayerSkin;
+                PlayerSize = aPlayerSize;
+                PlayerPositionX = aPlayerPositionX;
+                PlayerPositionY = aPlayerPositionY;
+                PlayerPosition = aPlayerPosition;
+                PlayerSkin = aPlayerSkin;
             }
 
             public void DrawPlayer()
             {
-                for (int y = playerPosition; y < playerPosition + playerSize; y++)
+                for (int y = PlayerPosition; y < PlayerPosition + PlayerSize; y++)
                 {
-                    PrintAtPosition(playerPositionX, y, playerSkin);
+                    Methods.PrintAtPosition(PlayerPositionX, y, PlayerSkin);
                 }
             }
 
             public void MovePlayerUp()
             {
-                if (playerPosition > 0)
+                if (PlayerPosition > 0)
                 {
-                    playerPosition--;
+                    PlayerPosition--;
                 }
             }
 
             public void MovePlayerDown()
             {
-                if (playerPosition < Console.WindowHeight - playerSize)
+                if (PlayerPosition < Console.WindowHeight - PlayerSize)
                 {
-                    playerPosition++;
+                    PlayerPosition++;
                 }
             }
         }
