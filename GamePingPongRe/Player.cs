@@ -9,17 +9,12 @@ namespace GamePingPongRe
     {
         public class Player : IPlayer
         {
-            private int playerSize;
-            private string playerSkin;
-            private int playerPosition;
-            private int playerPositionX;
-            private int playerPositionY;
 
-            public int PlayerSize { get => playerSize; set => playerSize = value; }
-            public string PlayerSkin { get => playerSkin; set => playerSkin = value; }
-            public int PlayerPosition { get => playerPosition; set => playerPosition = value; }
-            public int PlayerPositionX { get => playerPositionX; set => playerPositionX = value; }
-            public int PlayerPositionY { get => playerPositionY; set => playerPositionY = value; }
+            public int PlayerSize { get; set; }
+            public string PlayerSkin { get; set; }
+            public int PlayerPosition { get; set; }
+            public int PlayerPositionX { get; set; }
+            public int PlayerPositionY { get; set; }
 
             public Player(int aPlayerSize, int aPlayerPosition, int aPlayerPositionX, int aPlayerPositionY, string aPlayerSkin)
             {
@@ -34,7 +29,7 @@ namespace GamePingPongRe
             {
                 for (int y = PlayerPosition; y < PlayerPosition + PlayerSize; y++)
                 {
-                    Methods.PrintAtPosition(PlayerPositionX, y, PlayerSkin);
+                    PrintAtPosition(PlayerPositionX, y, PlayerSkin);
                 }
             }
 

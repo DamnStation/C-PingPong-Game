@@ -8,25 +8,22 @@ namespace GamePingPongRe
     {
         public class Ball
         {
-            private string _ballSkin;
-            private bool _ballDirectionUp;
-            private bool _ballDirectionRight;
-            private int _ballPositionX;
-            private int _ballPositionY;
-            private bool _ballPlayer;
-
-            //TODO Try private var and get set prop for communication with other classes => private int BallPositionX;  
-            public string BallSkin { get => _ballSkin; set => _ballSkin = value; }
-            public bool BallDirectionUp { get => _ballDirectionUp; set => _ballDirectionUp = value; }
-            public bool BallDirectionRight { get => _ballDirectionRight; set => _ballDirectionRight = value; }
-            public int BallPositionX { get => _ballPositionX; set => _ballPositionX = value; }
-            public int BallPositionY { get => _ballPositionY; set => _ballPositionY = value; }
-            public bool BallPlayer { get => _ballPlayer; set => _ballPlayer = value; }
+            public int BallPositionX { get; set; }
+            public int BallPositionY { get; set; }
+            public string BallSkin { get; set; }
+            public bool BallDirectionUp { get; set; }
+            public bool BallDirectionRight { get; set; }
+            public bool BallPlayer { get; set; }
             public Score score { get; set; }
             public Player playerOne { get; set; }
             public Player playerTwo { get; set; }
+            
 
-            public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY, bool aBallDirectionUp, bool aBallDirectionRight, Score aScore, Player aPlayerOne, Player aPlayerTwo)
+            public Ball(
+                string aBallSkin,
+                int aBallPositionX, int aBallPositionY,
+                bool aBallDirectionUp, bool aBallDirectionRight,
+                Score aScore, Player aPlayerOne, Player aPlayerTwo)
             {
                 BallSkin = aBallSkin;
                 // ballPosition = aBallPosition;
@@ -37,11 +34,12 @@ namespace GamePingPongRe
                 score = aScore;
                 playerOne = aPlayerOne;
                 playerTwo = aPlayerTwo;
+               
             }
 
             public void DrawBall()
             {
-                Methods.PrintAtPosition(BallPositionX, BallPositionY, BallSkin);
+                PrintAtPosition(BallPositionX, BallPositionY, BallSkin);
             }
 
             public void MoveBall()
@@ -100,7 +98,7 @@ namespace GamePingPongRe
 
                 }
 
-                if (BallPositionX == playerOne.PlayerPositionX)
+                if (this.BallPositionX == playerOne.PlayerPositionX)
                 {
                     BallDirectionRight = !BallDirectionRight;
                 }
