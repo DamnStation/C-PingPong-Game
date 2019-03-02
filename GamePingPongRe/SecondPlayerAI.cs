@@ -8,6 +8,9 @@ namespace GamePingPongRe
     {
         class SecondPlayerAI
         {
+            private int playerAI;
+            public static int PlayerAI { get; set; }
+
         }
     }
 }

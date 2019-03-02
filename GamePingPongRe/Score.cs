@@ -1,28 +1,34 @@
-﻿namespace GamePingPongRe
+﻿using System;
+
+namespace GamePingPongRe
 {
     partial class PingPong
     {
-        public static class Score
+        public class Score
         {
-            public static int playerOneScore;
-            public static string separator;
-            public static int playerTwoScore;
-            
-            //public Score(int aPlayerOneScore,string aSeparator, int aPlayerTwoScore)
-            //{
-            //    playerOneScore = aPlayerOneScore;
-            //    separator = aSeparator;
-            //    playerTwoScore = aPlayerTwoScore;
-            //}
+            private int playerOneScore;
+            private string separator;
+            private int playerTwoScore;
 
-            public static void PlayerOneScores()
+            public int PlayerOneScore { get => playerOneScore; set => playerOneScore = value; }
+            public string Separator { get => separator; set => separator = value; }
+            public int PlayerTwoScore { get => playerTwoScore; set => playerTwoScore = value; }
+
+            public Score(int aPlayerOneScore, string aSeparator, int aPlayerTwoScore)
             {
-                playerOneScore++;
+                this.PlayerOneScore = aPlayerOneScore;
+                this.Separator = aSeparator;
+                this.PlayerTwoScore = aPlayerTwoScore;
             }
 
-            public static void PlayerTwoScore()
+            public void PlayerOneScores()
             {
-                playerTwoScore++;
+                PlayerOneScore++;
+            }
+
+            public void PlayerTwoScores()
+            {
+                PlayerTwoScore++;
             }
         }
     }

@@ -8,73 +8,104 @@ namespace GamePingPongRe
     {
         public class Ball
         {
-            public string ballSkin { get; set; }
-            public bool ballDirectionUp { get; set; }
-            public bool ballDirectionRight { get; set; }
-            public int ballPositionX { get; set; }
-            public int ballPositionY { get; set; }
-            public bool ballPlayer = false;
+            private string _ballSkin;
+            private bool _ballDirectionUp;
+            private bool _ballDirectionRight;
+            private int _ballPositionX;
+            private int _ballPositionY;
+            private bool _ballPlayer;
 
-            public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY,bool aBallDirectionUp,bool aBallDirectionRight)
+            //TODO Try private var and get set prop for communication with other classes => private int BallPositionX;  
+            public string BallSkin { get => _ballSkin; set => _ballSkin = value; }
+            public bool BallDirectionUp { get => _ballDirectionUp; set => _ballDirectionUp = value; }
+            public bool BallDirectionRight { get => _ballDirectionRight; set => _ballDirectionRight = value; }
+            public int BallPositionX { get => _ballPositionX; set => _ballPositionX = value; }
+            public int BallPositionY { get => _ballPositionY; set => _ballPositionY = value; }
+            public bool BallPlayer { get => _ballPlayer; set => _ballPlayer = value; }
+            public Score score { get; set; }
+            public Player playerOne { get; set; }
+            public Player playerTwo { get; set; }
+
+            public Ball(string aBallSkin, int aBallPositionX, int aBallPositionY, bool aBallDirectionUp, bool aBallDirectionRight, Score aScore, Player aPlayerOne, Player aPlayerTwo)
             {
-                ballSkin = aBallSkin;
-               // ballPosition = aBallPosition;
-                ballPositionX = aBallPositionX;
-                ballPositionY = aBallPositionY;
-                ballDirectionUp = aBallDirectionUp;
-                ballDirectionRight = aBallDirectionRight;
+                BallSkin = aBallSkin;
+                // ballPosition = aBallPosition;
+                BallPositionX = aBallPositionX;
+                BallPositionY = aBallPositionY;
+                BallDirectionUp = aBallDirectionUp;
+                BallDirectionRight = aBallDirectionRight;
+                score = aScore;
+                playerOne = aPlayerOne;
+                playerTwo = aPlayerTwo;
             }
 
             public void DrawBall()
             {
-                PrintAtPosition(ballPositionX , ballPositionY, ballSkin);
+                Methods.PrintAtPosition(BallPositionX, BallPositionY, BallSkin);
             }
 
             public void MoveBall()
             {
-                if (ballPositionY == 0)
+                if (BallPositionY == 0)
                 {
-                    ballDirectionUp = false;
+                    BallDirectionUp = false;
                 }
-                if (ballDirectionUp)
+                if (BallDirectionUp)
                 {
-                    ballPositionY--;
-                }
-                else
-                {
-                    ballPositionY++;
-                }
-                if (ballDirectionRight)
-                {
-                    ballPositionX++;
+                    BallPositionY--;
                 }
                 else
                 {
-                    ballDirectionRight = false;
+                    BallPositionY++;
                 }
-                if (ballPositionY == Console.WindowHeight -1)
+                if (BallDirectionRight)
                 {
-                    ballDirectionUp = true;
+                    BallPositionX++;
+                    //ballDirectionRight = true;
+                }
+                else
+                {
+                    BallPositionX--;
+                    //ballDirectionRight = false; 
+                }
+                if (BallPositionY == Console.WindowHeight - 1)
+                {
+                    BallDirectionUp = true;
                 }
                 // Score
-                if (ballPositionX == Console.WindowWidth -1)
+                if (BallPositionX == Console.WindowWidth - 1)
                 {
-                    Score.playerOneScore++;
+                    score.PlayerOneScores();
                     DrawBall();
                 }
-                if (ballPositionX == 0)
+                if (BallPositionX == 0)
                 {
-                    Score.playerTwoScore++;
+                    score.PlayerTwoScores();
                 }
-                //if (ballPositionX == playerPosition + playerSize) 
-                //{
-                //    ballDirectionRight = !ballDirectionRight;
-                //}
 
-                if (ballPositionX == // HOW TO REACH OTHER CLASSES FFS>>>)
+                if (BallPositionX == Console.WindowWidth /* Reset and give oposite direction for P1*/)
                 {
-                    ballPlayer = true;
+                    // ballPlayer = true;
+                    BallPositionX = Console.WindowWidth / 2;
+                    BallPositionY = Console.WindowHeight / 2;
+                    BallDirectionRight = false;
+
                 }
+                if (BallPositionX == Console.WindowLeft  /* Reset and give oposite direction for P2 */)
+                {
+                    // ballPlayer = true;
+                    BallPositionX = Console.WindowWidth / 2;
+                    BallPositionY = Console.WindowHeight / 2;
+                    BallDirectionRight = true;
+
+                }
+
+                if (BallPositionX == playerOne.PlayerPositionX)
+                {
+                    BallDirectionRight = !BallDirectionRight;
+                }
+
+
             }
         }
     }
