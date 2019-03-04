@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GamePingPongRe
 {
@@ -18,7 +16,6 @@ namespace GamePingPongRe
             public Score score { get; set; }
             public Player playerOne { get; set; }
             public Player playerTwo { get; set; }
-            
 
             public Ball(
                 string aBallSkin,
@@ -27,7 +24,6 @@ namespace GamePingPongRe
                 Score aScore, Player aPlayerOne, Player aPlayerTwo)
             {
                 BallSkin = aBallSkin;
-                // ballPosition = aBallPosition;
                 BallPositionX = aBallPositionX;
                 BallPositionY = aBallPositionY;
                 BallDirectionUp = aBallDirectionUp;
@@ -35,7 +31,6 @@ namespace GamePingPongRe
                 score = aScore;
                 playerOne = aPlayerOne;
                 playerTwo = aPlayerTwo;
-               
             }
 
             public void DrawBall()
@@ -65,18 +60,15 @@ namespace GamePingPongRe
                 if (BallDirectionRight)
                 {
                     BallPositionX++;
-                    //ballDirectionRight = true;
                 }
                 else
                 {
                     BallPositionX--;
-                    //ballDirectionRight = false; 
                 }
                 if (BallPositionY == Console.WindowHeight - 1)
                 {
                     BallDirectionUp = true;
                  }
-                // Score
                 if (BallPositionX == Console.WindowWidth - 1)/* Reset and give oposite direction for P1*/
                 {
                     score.PlayerOneScores();
@@ -105,7 +97,6 @@ namespace GamePingPongRe
                         BallDirectionRight = false;
                     }
                 }
-
             }
         }
     }
