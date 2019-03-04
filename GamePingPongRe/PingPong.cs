@@ -22,11 +22,14 @@ namespace GamePingPongRe
         {
             var playerOne = new Player(5, Console.WindowHeight / 2 /2, 1, 1, "|]");
 
-            var playerTwo = new Player(4, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
+            var playerTwo = new Player(5, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
 
             var score = new Score(0, "-", 0);
 
             var ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false,score,playerOne,playerTwo);
+            var randAI = new Random();
+            var playerAI = new SecondPlayerAI(ball,randAI,playerTwo);
+          
 
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
@@ -41,7 +44,7 @@ namespace GamePingPongRe
                     if (keyInfo.Key == ConsoleKey.W)
                     {
                         playerOne.MovePlayerUp();
-                        
+
                     }
                     if (keyInfo.Key == ConsoleKey.S)
                     {
@@ -49,10 +52,13 @@ namespace GamePingPongRe
                     }
                 }
                
+               
+
                 ball.MoveBall();
                 playerOne.DrawPlayer();
                 playerTwo.DrawPlayer();
                 ball.DrawBall();
+                playerAI.MoveSecondAI();
                 
                 Console.SetCursorPosition(Console.WindowWidth / 2, 1); Console.Write("{0}{1}{2}",score.PlayerOneScore, score.Separator, score.PlayerTwoScore);
                 System.Threading.Thread.Sleep(60);

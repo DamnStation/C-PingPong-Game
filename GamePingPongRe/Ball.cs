@@ -13,7 +13,8 @@ namespace GamePingPongRe
             public string BallSkin { get; set; }
             public bool BallDirectionUp { get; set; }
             public bool BallDirectionRight { get; set; }
-            public bool BallPlayer { get; set; }
+            public int BallPlayer { get; set; }
+        
             public Score score { get; set; }
             public Player playerOne { get; set; }
             public Player playerTwo { get; set; }
@@ -40,6 +41,11 @@ namespace GamePingPongRe
             public void DrawBall()
             {
                 PrintAtPosition(BallPositionX, BallPositionY, BallSkin);
+            }
+            public void SetBallAtStartPosition()
+            {
+                BallPositionX = Console.WindowWidth / 2;
+                BallPositionY = Console.WindowHeight / 2;
             }
 
             public void MoveBall()
@@ -69,40 +75,36 @@ namespace GamePingPongRe
                 if (BallPositionY == Console.WindowHeight - 1)
                 {
                     BallDirectionUp = true;
-                }
+                 }
                 // Score
-                if (BallPositionX == Console.WindowWidth - 1)
+                if (BallPositionX == Console.WindowWidth - 1)/* Reset and give oposite direction for P1*/
                 {
                     score.PlayerOneScores();
-                    DrawBall();
+                    SetBallAtStartPosition();
+                    BallDirectionRight = false;
                 }
-                if (BallPositionX == 0)
+                if (BallPositionX == 1)  /* Reset and give oposite direction for P2 */
                 {
                     score.PlayerTwoScores();
-                }
-
-                if (BallPositionX == Console.WindowWidth /* Reset and give oposite direction for P1*/)
-                {
-                    // ballPlayer = true;
-                    BallPositionX = Console.WindowWidth / 2;
-                    BallPositionY = Console.WindowHeight / 2;
-                    BallDirectionRight = false;
-
-                }
-                if (BallPositionX == Console.WindowLeft  /* Reset and give oposite direction for P2 */)
-                {
-                    // ballPlayer = true;
-                    BallPositionX = Console.WindowWidth / 2;
-                    BallPositionY = Console.WindowHeight / 2;
+                    SetBallAtStartPosition();
                     BallDirectionRight = true;
-
                 }
-
-                if (this.BallPositionX == playerOne.PlayerPositionX)
+                if (BallPositionX <= 3)
                 {
-                    BallDirectionRight = !BallDirectionRight;
+                    if (BallPositionY >= playerOne.PlayerPosition
+                        && BallPositionY < playerOne.PlayerPosition + playerOne.PlayerSize)
+                    {
+                        BallDirectionRight = true;
+                    }
                 }
-
+                if (BallPositionX >= Console.WindowWidth -3)
+                {
+                    if (BallPositionY >= playerTwo.PlayerPosition
+                        && BallPositionY < playerTwo.PlayerPosition + playerTwo.PlayerSize)
+                    {
+                        BallDirectionRight = false;
+                    }
+                }
 
             }
         }
