@@ -30,3 +30,4 @@ C:\Users\WinG\source\repos\DamnStation\C-PingPong-Game\GamePingPongRe\obj\Debug\
 C:\Users\WinG\source\repos\DamnStation\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.AssemblyInfo.cs
 C:\Users\WinG\source\repos\DamnStation\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.dll
 C:\Users\WinG\source\repos\DamnStation\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.pdb
+C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.csprojAssemblyReference.cache

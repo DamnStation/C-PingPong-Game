@@ -14,34 +14,106 @@ namespace GamePingPongRe
             Console.SetCursorPosition(x, y);
             Console.Write(Skin);
         }
-        public static void SetCursurAtTheMidle()
+        public static void PrintAtTheMidle(string aTextSize)
         {
-            Console.SetCursorPosition(Console.WindowWidth / 2 / 2, Console.WindowHeight / 2);
+            Console.SetCursorPosition(Console.WindowWidth / 2 - aTextSize.Length /2 , Console.WindowHeight / 2);
+            Console.Write(aTextSize);
+        }
+        public static void PrintHint(string aHint)
+        {
+            Console.SetCursorPosition(Console.WindowWidth - aHint.Length - 2, 1);
+            Console.Write(aHint);
         }
         static void Main(string[] args)
         {
+            
 
-            var playerOne = new Player(5, Console.WindowHeight / 2 /2, 1, 1, "|]");
-            var playerTwo = new Player(5, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
+            var playerOne = new Player(5, Console.WindowHeight / 2 / 2, 1, 1, "|]");
+            var playerTwo = new Player(5, 10, Console.WindowWidth - 2, Console.WindowHeight / 2, "[|");
             var score = new Score(0, "-", 0);
-            var ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false,score,playerOne,playerTwo);
+            var ball = new Ball("@", Console.WindowWidth / 2, Console.WindowHeight / 2, false, false, score, playerOne, playerTwo);
             var randAI = new Random();
-            var playerAI = new SecondPlayerAI(ball,randAI,playerTwo);
-
-
+            var playerAI = new SecondPlayerAI(ball, randAI, playerTwo);
+            
             Console.Title = "Ping Pong";
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
-            SetCursurAtTheMidle();
-            Console.WriteLine("Wellcome to the Ping Pong Game");
-            playerAI.NiceA();
-            Console.ReadKey();
+
+            PrintAtTheMidle(Setup.wellcome);
+           // playerAI.NiceA();
+
             Console.Clear();
-            Console.WriteLine("Hint: Default skyn is '[|'");
-            SetCursurAtTheMidle();
-            Console.Write("Pick two symbols for second player skin, and press ''Enter'' : ");
+            PrintHint(Setup.hintPlayerOneSkin);
+            PrintAtTheMidle(Setup.pickPlayerOneSymbols);
+            playerOne.PlayerSkin = Console.ReadLine();
+            while (true)
+            {
+                if (playerOne.PlayerSkin.Length == 1 || playerOne.PlayerSkin.Length == 2)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    PrintHint(Setup.hintPlayerOneSkin);
+                    PrintAtTheMidle(Setup.pickPlayerOneSymbols);
+                    playerOne.PlayerSkin = Console.ReadLine();
+                }
+            }
+            Console.Clear();
+            PrintHint(Setup.hintSkin);
+            PrintAtTheMidle(Setup.pickPlayerSymbols);
             playerTwo.PlayerSkin = Console.ReadLine();
+            while (true)
+            {
+                if (playerTwo.PlayerSkin.Length == 1 || playerTwo.PlayerSkin.Length == 2)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    PrintHint(Setup.hintSkin);
+                    PrintAtTheMidle(Setup.pickPlayerSymbols);
+                    playerTwo.PlayerSkin = Console.ReadLine();
+                }
+            }
             Console.Clear();
+            PrintHint(Setup.hintPlayerSize);
+            PrintAtTheMidle(Setup.pickPlayerOneSize);
+            playerOne.PlayerSize = byte.Parse(Console.ReadLine());
+            while (true)
+            {
+                if (playerOne.PlayerSize > 1 || playerOne.PlayerSize < Console.WindowHeight)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    PrintHint(Setup.hintPlayerSize);
+                    PrintAtTheMidle(Setup.pickPlayerOneSize);
+                    playerOne.PlayerSize = byte.Parse(Console.ReadLine());
+                }
+            }
+            Console.Clear();
+            PrintHint(Setup.hintPlayerSize);
+            PrintAtTheMidle(Setup.pickPlayerTwoSize);
+            playerTwo.PlayerSize = byte.Parse(Console.ReadLine());
+            while (true)
+            {
+                if (playerTwo.PlayerSize > 1 || playerTwo.PlayerSize < Console.WindowHeight)
+                {
+                    break;
+                }
+                else
+                {
+                    Console.Clear();
+                    PrintHint(Setup.hintPlayerSize);
+                    PrintAtTheMidle(Setup.pickPlayerTwoSize);
+                    playerTwo.PlayerSize = byte.Parse(Console.ReadLine());
+                }
+            }
 
             while (true)
             {
