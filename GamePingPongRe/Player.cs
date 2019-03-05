@@ -6,7 +6,6 @@ namespace GamePingPongRe
     {
         public class Player : IPlayer
         {
-
             public int PlayerSize { get; set; }
             public string PlayerSkin { get; set; }
             public int PlayerPosition { get; set; }

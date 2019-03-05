@@ -20,12 +20,14 @@ namespace GamePingPongRe
         }
         static void Main(string[] args)
         {
+
             var playerOne = new Player(5, Console.WindowHeight / 2 /2, 1, 1, "|]");
             var playerTwo = new Player(5, 10, Console.WindowWidth -2, Console.WindowHeight /2, "[|");
             var score = new Score(0, "-", 0);
             var ball = new Ball("@", Console.WindowWidth / 2 , Console.WindowHeight / 2,false,false,score,playerOne,playerTwo);
             var randAI = new Random();
             var playerAI = new SecondPlayerAI(ball,randAI,playerTwo);
+
 
             Console.Title = "Ping Pong";
             Console.CursorVisible = false;
@@ -40,10 +42,6 @@ namespace GamePingPongRe
             Console.Write("Pick two symbols for second player skin, and press ''Enter'' : ");
             playerTwo.PlayerSkin = Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("Hint: Best difficulty is '70'");
-            SetCursurAtTheMidle();
-            Console.Write("Pick PC AI difficulty (0 - 100)");
-            playerAI.Difficulty = (int)Console.Read();
 
             while (true)
             {
@@ -54,7 +52,6 @@ namespace GamePingPongRe
                     if (keyInfo.Key == ConsoleKey.W)
                     {
                         playerOne.MovePlayerUp();
-
                     }
                     if (keyInfo.Key == ConsoleKey.S)
                     {
@@ -71,9 +68,6 @@ namespace GamePingPongRe
                 System.Threading.Thread.Sleep(60);
                 Console.Clear();
             }
-            
         }
-
-        
     }
 }

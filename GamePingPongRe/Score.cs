@@ -4,7 +4,7 @@ namespace GamePingPongRe
 {
     partial class PingPong
     {
-        public class Score
+        public class Score : IScore
         {
             public string Separator { get; set; }
             public int PlayerTwoScore { get; set; }

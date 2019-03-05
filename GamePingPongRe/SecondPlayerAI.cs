@@ -5,12 +5,11 @@ namespace GamePingPongRe
 {
     partial class PingPong
     {
-        class SecondPlayerAI
+        class SecondPlayerAI : ISecondPlayerAI
         {
             public Ball BallPositionAI { get; set; }
             public Random RandAI;
             public Player Player { get; set; }
-            public int Difficulty { get; set; }
             public SecondPlayerAI(Ball aBallPositionAI,Random aRandAI, Player aPlayer)
             {
                 this.BallPositionAI = aBallPositionAI;
@@ -20,7 +19,7 @@ namespace GamePingPongRe
             public void MoveSecondAI()
             {
                 int randomNumber = RandAI.Next(0, 101);
-                if (randomNumber <= Difficulty)
+                if (randomNumber <= 70)
                 {
                     if (BallPositionAI.BallDirectionUp == true)
                     {
@@ -35,21 +34,21 @@ namespace GamePingPongRe
             public void NiceA()
             {
                 Console.Beep(300, 500);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
                 Console.Beep(300, 500);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
                 Console.Beep(300, 500);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
                 Console.Beep(250, 500);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
                 Console.Beep(350, 250);
                 Console.Beep(300, 500);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
                 Console.Beep(250, 500);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
                 Console.Beep(350, 250);
                 Console.Beep(300, 500);
-                Thread.Sleep(50);
+                Thread.Sleep(25);
             }
         }
     }

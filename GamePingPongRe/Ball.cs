@@ -4,7 +4,7 @@ namespace GamePingPongRe
 {
     partial class PingPong
     {
-        public class Ball
+        public class Ball : IBall
         {
             public int BallPositionX { get; set; }
             public int BallPositionY { get; set; }
