@@ -14,7 +14,6 @@ C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\bin\Debug\netcorea
 C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.runtimeconfig.dev.json
 C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.dll
 C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\bin\Debug\netcoreapp2.1\GamePingPongRe.pdb
-C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.csprojAssemblyReference.cache
 C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.csproj.CoreCompileInputs.cache
 C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.AssemblyInfoInputs.cache
 C:\Users\Rado\Desktop\Projects\C-PingPong-Game\GamePingPongRe\obj\Debug\netcoreapp2.1\GamePingPongRe.AssemblyInfo.cs
