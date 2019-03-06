@@ -12,9 +12,9 @@ namespace GamePingPongRe
             public int PlayerPositionX { get; set; }
             public int PlayerPositionY { get; set; }
 
-            public Player(int aPlayerSize, int aPlayerPosition, int aPlayerPositionX, int aPlayerPositionY, string aPlayerSkin)
+            public Player(/*int aPlayerSize,*/ int aPlayerPosition, int aPlayerPositionX, int aPlayerPositionY, string aPlayerSkin)
             {
-                PlayerSize = aPlayerSize;
+               // PlayerSize = aPlayerSize;
                 PlayerPositionX = aPlayerPositionX;
                 PlayerPositionY = aPlayerPositionY;
                 PlayerPosition = aPlayerPosition;

@@ -26,10 +26,8 @@ namespace GamePingPongRe
         }
         static void Main(string[] args)
         {
-            
-
-            var playerOne = new Player(5, Console.WindowHeight / 2 / 2, 1, 1, "|]");
-            var playerTwo = new Player(5, 10, Console.WindowWidth - 2, Console.WindowHeight / 2, "[|");
+            var playerOne = new Player(Console.WindowHeight / 2 / 2, 1, 1, "|]");
+            var playerTwo = new Player(10, Console.WindowWidth - 2, Console.WindowHeight / 2, "[|");
             var score = new Score(0, "-", 0);
             var ball = new Ball("@", Console.WindowWidth / 2, Console.WindowHeight / 2, false, false, score, playerOne, playerTwo);
             var randAI = new Random();
@@ -42,12 +40,13 @@ namespace GamePingPongRe
             PrintAtTheMidle(Setup.wellcome);
            // playerAI.NiceA();
 
-            Console.Clear();
-            PrintHint(Setup.hintPlayerOneSkin);
-            PrintAtTheMidle(Setup.pickPlayerOneSymbols);
-            playerOne.PlayerSkin = Console.ReadLine();
+            
             while (true)
             {
+                Console.Clear();
+                PrintHint(Setup.hintPlayerOneSkin);
+                PrintAtTheMidle(Setup.pickPlayerOneSymbols);
+                playerOne.PlayerSkin = Console.ReadLine();
                 if (playerOne.PlayerSkin.Length == 1 || playerOne.PlayerSkin.Length == 2)
                 {
                     break;
@@ -60,12 +59,13 @@ namespace GamePingPongRe
                     playerOne.PlayerSkin = Console.ReadLine();
                 }
             }
-            Console.Clear();
-            PrintHint(Setup.hintSkin);
-            PrintAtTheMidle(Setup.pickPlayerSymbols);
-            playerTwo.PlayerSkin = Console.ReadLine();
+            
             while (true)
             {
+                Console.Clear();
+                PrintHint(Setup.hintSkin);
+                PrintAtTheMidle(Setup.pickPlayerSymbols);
+                playerTwo.PlayerSkin = Console.ReadLine();
                 if (playerTwo.PlayerSkin.Length == 1 || playerTwo.PlayerSkin.Length == 2)
                 {
                     break;
@@ -78,13 +78,19 @@ namespace GamePingPongRe
                     playerTwo.PlayerSkin = Console.ReadLine();
                 }
             }
-            Console.Clear();
-            PrintHint(Setup.hintPlayerSize);
-            PrintAtTheMidle(Setup.pickPlayerOneSize);
-            playerOne.PlayerSize = byte.Parse(Console.ReadLine());
+           
             while (true)
             {
-                if (playerOne.PlayerSize > 1 || playerOne.PlayerSize < Console.WindowHeight)
+                Console.Clear();
+                Console.Write(Setup.minMaxSize);
+                PrintHint(Setup.hintPlayerSize);
+                
+                PrintAtTheMidle(Setup.pickPlayerOneSize);
+                Setup.parseFieldString = Console.ReadLine();
+                int.TryParse(Setup.parseFieldString, out Setup.parseFieldInt);
+                playerOne.PlayerSize = Setup.parseFieldInt;
+
+                if (playerOne.PlayerSize > 1 && playerOne.PlayerSize < 16)
                 {
                     break;
                 }
@@ -93,16 +99,24 @@ namespace GamePingPongRe
                     Console.Clear();
                     PrintHint(Setup.hintPlayerSize);
                     PrintAtTheMidle(Setup.pickPlayerOneSize);
-                    playerOne.PlayerSize = byte.Parse(Console.ReadLine());
+                    Setup.parseFieldString = Console.ReadLine();
+                    int.TryParse(Setup.parseFieldString, out Setup.parseFieldInt);
+                    playerOne.PlayerSize = Setup.parseFieldInt;
                 }
             }
-            Console.Clear();
-            PrintHint(Setup.hintPlayerSize);
-            PrintAtTheMidle(Setup.pickPlayerTwoSize);
-            playerTwo.PlayerSize = byte.Parse(Console.ReadLine());
+            
             while (true)
             {
-                if (playerTwo.PlayerSize > 1 || playerTwo.PlayerSize < Console.WindowHeight)
+                Console.Clear();
+                Console.Write(Setup.minMaxSize);
+                PrintHint(Setup.hintPlayerSize);
+                
+                PrintAtTheMidle(Setup.pickPlayerTwoSize);
+                Setup.parseFieldString = Console.ReadLine();
+                int.TryParse(Setup.parseFieldString, out Setup.parseFieldInt);
+                playerTwo.PlayerSize = Setup.parseFieldInt;
+
+                if (playerTwo.PlayerSize > 1 && playerTwo.PlayerSize < 16)
                 {
                     break;
                 }
@@ -111,7 +125,9 @@ namespace GamePingPongRe
                     Console.Clear();
                     PrintHint(Setup.hintPlayerSize);
                     PrintAtTheMidle(Setup.pickPlayerTwoSize);
-                    playerTwo.PlayerSize = byte.Parse(Console.ReadLine());
+                    Setup.parseFieldString = Console.ReadLine();
+                    int.TryParse(Setup.parseFieldString, out Setup.parseFieldInt);
+                    playerTwo.PlayerSize = Setup.parseFieldInt;
                 }
             }
 
