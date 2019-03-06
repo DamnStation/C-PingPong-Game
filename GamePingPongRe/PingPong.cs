@@ -36,9 +36,9 @@ namespace GamePingPongRe
             Console.Title = "Ping Pong";
             Console.CursorVisible = false;
             Console.BackgroundColor = ConsoleColor.Black;
-
+            Console.Write("Loading...");
             PrintAtTheMidle(Setup.wellcome);
-           // playerAI.NiceA();
+            playerAI.NiceA();
 
             
             while (true)
@@ -84,7 +84,6 @@ namespace GamePingPongRe
                 Console.Clear();
                 Console.Write(Setup.minMaxSize);
                 PrintHint(Setup.hintPlayerSize);
-                
                 PrintAtTheMidle(Setup.pickPlayerOneSize);
                 Setup.parseFieldString = Console.ReadLine();
                 int.TryParse(Setup.parseFieldString, out Setup.parseFieldInt);
@@ -97,6 +96,7 @@ namespace GamePingPongRe
                 else
                 {
                     Console.Clear();
+                    Console.Write(Setup.minMaxSize);
                     PrintHint(Setup.hintPlayerSize);
                     PrintAtTheMidle(Setup.pickPlayerOneSize);
                     Setup.parseFieldString = Console.ReadLine();
@@ -110,7 +110,6 @@ namespace GamePingPongRe
                 Console.Clear();
                 Console.Write(Setup.minMaxSize);
                 PrintHint(Setup.hintPlayerSize);
-                
                 PrintAtTheMidle(Setup.pickPlayerTwoSize);
                 Setup.parseFieldString = Console.ReadLine();
                 int.TryParse(Setup.parseFieldString, out Setup.parseFieldInt);
@@ -123,6 +122,7 @@ namespace GamePingPongRe
                 else
                 {
                     Console.Clear();
+                    Console.Write(Setup.minMaxSize);
                     PrintHint(Setup.hintPlayerSize);
                     PrintAtTheMidle(Setup.pickPlayerTwoSize);
                     Setup.parseFieldString = Console.ReadLine();
